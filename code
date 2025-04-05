@@ -1,0 +1,238 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_TEAMS 10
+#define MAX_PLAYERS 15
+
+// Define player structure
+typedef struct {
+    char name[50];
+    int runs;
+    int wickets;
+    int man_of_the_match;
+} Player;
+
+// Define team structure
+typedef struct {
+    char team_name[50];
+    Player players[MAX_PLAYERS];
+    int player_count;
+} Team;
+
+// Tournament Data Structure
+Team teams[MAX_TEAMS];
+int team_count = 0;
+
+// Function to add a team
+void addTeam(char *team_name) {
+    if (team_count < MAX_TEAMS) {
+        strcpy(teams[team_count].team_name, team_name);
+        teams[team_count].player_count = 0;
+        team_count++;
+    } else {
+        printf("Maximum team limit reached.\n");
+    }
+}
+
+// Function to add a player to a team
+void addPlayer(char *team_name, char *player_name, int runs, int wickets, int man_of_the_match) {
+    for (int i = 0; i < team_count; i++) {
+        if (strcmp(teams[i].team_name, team_name) == 0) {
+            if (teams[i].player_count < MAX_PLAYERS) {
+                Player *player = &teams[i].players[teams[i].player_count++];
+                strcpy(player->name, player_name);
+                player->runs = runs;
+                player->wickets = wickets;
+                player->man_of_the_match = man_of_the_match;
+            } else {
+                printf("Maximum player limit reached for %s.\n", team_name);
+            }
+            return;
+        }
+    }
+    printf("Team not found.\n");
+}
+
+// Display all teams and their players
+void displayTeams() {
+    for (int i = 0; i < team_count; i++) {
+        printf("Team: %s\n", teams[i].team_name);
+        for (int j = 0; j < teams[i].player_count; j++) {
+            Player *player = &teams[i].players[j];
+            printf("  Player: %s | Runs: %d | Wickets: %d | MOTM: %d\n",
+                   player->name, player->runs, player->wickets, player->man_of_the_match);
+        }
+    }
+}
+
+// Identify highest run-scorer across all teams
+Player* findHighestRunScorer() {
+    Player *top_scorer = NULL;
+    int max_runs = -1;
+    for (int i = 0; i < team_count; i++) {
+        for (int j = 0; j < teams[i].player_count; j++) {
+            Player *player = &teams[i].players[j];
+            if (player->runs > max_runs) {
+                max_runs = player->runs;
+                top_scorer = player;
+            }
+        }
+    }
+    return top_scorer;
+}
+
+// Identify highest wicket-taker across all teams
+Player* findHighestWicketTaker() {
+    Player *top_wicket_taker = NULL;
+    int max_wickets = -1;
+    for (int i = 0; i < team_count; i++) {
+        for (int j = 0; j < teams[i].player_count; j++) {
+            Player *player = &teams[i].players[j];
+            if (player->wickets > max_wickets) {
+                max_wickets = player->wickets;
+                top_wicket_taker = player;
+            }
+        }
+    }
+    return top_wicket_taker;
+}
+
+// Identify player with the most Man of the Match awards
+Player* findMostManOfTheMatch() {
+    Player *top_motm = NULL;
+    int max_motm = -1;
+    for (int i = 0; i < team_count; i++) {
+        for (int j = 0; j < teams[i].player_count; j++) {
+            Player *player = &teams[i].players[j];
+            if (player->man_of_the_match > max_motm) {
+                max_motm = player->man_of_the_match;
+                top_motm = player;
+            }
+        }
+    }
+    return top_motm;
+}
+
+// Determine best playing 11 based on runs and wickets
+void determineBestPlaying11() {
+    Player *playing11[MAX_PLAYERS];
+    int count = 0;
+
+    for (int i = 0; i < team_count; i++) {
+        for (int j = 0; j < teams[i].player_count; j++) {
+            playing11[count++] = &teams[i].players[j];
+        }
+    }
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = i + 1; j < count; j++) {
+            if ((playing11[i]->runs + playing11[i]->wickets) < (playing11[j]->runs + playing11[j]->wickets)) {
+                Player *temp = playing11[i];
+                playing11[i] = playing11[j];
+                playing11[j] = temp;
+            }
+        }
+    }
+
+    printf("Best Playing 11:\n");
+    for (int i = 0; i < 11 && i < count; i++) {
+        printf("  %s | Runs: %d | Wickets: %d\n", playing11[i]->name, playing11[i]->runs, playing11[i]->wickets);
+    }
+}
+
+// Load data from file
+void loadDataFromFile(char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (!file) {
+        printf("Could not open file %s\n", filename);
+        return;
+    }
+
+    char line[200];
+    char current_team[50];
+
+    while (fgets(line, sizeof(line), file)) {
+        char type[10];
+        sscanf(line, "%[^,]", type);
+
+        if (strcmp(type, "Team") == 0) {
+            sscanf(line, "%*[^,], %[^\n]", current_team);
+            addTeam(current_team);
+        } else if (strcmp(type, "Player") == 0) {
+            char player_name[50];
+            int runs, wickets, man_of_the_match;
+            sscanf(line, "%*[^,], %[^,], %d, %d, %d", player_name, &runs, &wickets, &man_of_the_match);
+            addPlayer(current_team, player_name, runs, wickets, man_of_the_match);
+        }
+    }
+    fclose(file);
+}
+
+// Main function with menu
+void displayMenu() {
+    printf("\n--- Cricket Tournament Manager Menu ---\n");
+    printf("1. Display Teams and Players\n");
+    printf("2. Find Highest Run Scorer\n");
+    printf("3. Find Highest Wicket Taker\n");
+    printf("4. Find Most Man of the Match Awards\n");
+    printf("5. Determine Best Playing 11\n");
+    printf("6. Exit\n");
+}
+
+int main() {
+    int choice;
+
+    // Load data from file
+    loadDataFromFile("tournament_data.txt");
+
+    // Menu Loop
+    do {
+        displayMenu();
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+                displayTeams();
+                break;
+            case 2: {
+                Player *top_scorer = findHighestRunScorer();
+                if (top_scorer) {
+                    printf("Highest Run Scorer: %s | Runs: %d\n", top_scorer->name, top_scorer->runs);
+                } else {
+                    printf("No players found.\n");
+                }
+                break;
+            }
+            case 3: {
+                Player *top_wicket_taker = findHighestWicketTaker();
+                if (top_wicket_taker) {
+                    printf("Highest Wicket Taker: %s | Wickets: %d\n", top_wicket_taker->name, top_wicket_taker->wickets);
+                } else {
+                    printf("No players found.\n");
+                }
+                break;
+            }
+            case 4: {
+                Player *top_motm = findMostManOfTheMatch();
+                if (top_motm) {
+                    printf("Most Man of the Match Awards: %s | MOTM: %d\n", top_motm->name, top_motm->man_of_the_match);
+                } else {
+                    printf("No players found.\n");
+                }
+                break;
+            }
+            case 5:
+                determineBestPlaying11();
+                break;
+            case 6:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice. Try again.\n");
+        }
+    } while (choice != 6);
+
+    return 0;
+}
