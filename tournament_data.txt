@@ -1,0 +1,186 @@
+Team, Team A
+Player, Player A1, 500, 10, 2
+Player, Player A2, 300, 15, 3
+Player, Player A3, 200, 5, 1
+Player, Player A4, 350, 8, 2
+Player, Player A5, 100, 12, 1
+Player, Player A6, 420, 11, 3
+Player, Player A7, 150, 7, 1
+Player, Player A8, 380, 9, 2
+Player, Player A9, 270, 6, 1
+Player, Player A10, 210, 10, 2
+Player, Player A11, 330, 4, 1
+Player, Player A12, 280, 8, 3
+Player, Player A13, 390, 13, 4
+Player, Player A14, 240, 11, 2
+Player, Player A15, 310, 6, 2
+
+Team, Team B
+Player, Player B1, 450, 8, 5
+Player, Player B2, 100, 20, 1
+Player, Player B3, 250, 12, 2
+Player, Player B4, 360, 7, 3
+Player, Player B5, 310, 11, 2
+Player, Player B6, 420, 9, 1
+Player, Player B7, 290, 13, 3
+Player, Player B8, 410, 6, 2
+Player, Player B9, 330, 4, 1
+Player, Player B10, 270, 15, 2
+Player, Player B11, 340, 10, 4
+Player, Player B12, 230, 8, 1
+Player, Player B13, 370, 5, 2
+Player, Player B14, 290, 6, 3
+Player, Player B15, 320, 7, 2
+
+Team, Team C
+Player, Player C1, 600, 7, 4
+Player, Player C2, 320, 18, 3
+Player, Player C3, 150, 6, 1
+Player, Player C4, 270, 12, 2
+Player, Player C5, 310, 5, 3
+Player, Player C6, 430, 10, 2
+Player, Player C7, 200, 15, 1
+Player, Player C8, 380, 4, 2
+Player, Player C9, 150, 8, 1
+Player, Player C10, 410, 7, 3
+Player, Player C11, 250, 9, 2
+Player, Player C12, 340, 6, 4
+Player, Player C13, 290, 11, 3
+Player, Player C14, 240, 5, 2
+Player, Player C15, 320, 13, 1
+
+Team, Team D
+Player, Player D1, 480, 9, 3
+Player, Player D2, 270, 11, 2
+Player, Player D3, 120, 4, 1
+Player, Player D4, 310, 13, 2
+Player, Player D5, 250, 8, 1
+Player, Player D6, 200, 7, 3
+Player, Player D7, 410, 6, 2
+Player, Player D8, 380, 10, 1
+Player, Player D9, 140, 5, 2
+Player, Player D10, 300, 12, 1
+Player, Player D11, 320, 15, 3
+Player, Player D12, 260, 9, 4
+Player, Player D13, 330, 8, 2
+Player, Player D14, 420, 7, 1
+Player, Player D15, 210, 6, 3
+
+Team, Team E
+Player, Player E1, 530, 12, 5
+Player, Player E2, 330, 9, 4
+Player, Player E3, 210, 10, 2
+Player, Player E4, 400, 8, 3
+Player, Player E5, 270, 15, 1
+Player, Player E6, 290, 7, 2
+Player, Player E7, 310, 6, 3
+Player, Player E8, 230, 9, 1
+Player, Player E9, 380, 5, 2
+Player, Player E10, 350, 11, 1
+Player, Player E11, 340, 7, 2
+Player, Player E12, 210, 14, 1
+Player, Player E13, 310, 10, 3
+Player, Player E14, 300, 6, 2
+Player, Player E15, 280, 8, 1
+
+Team, Team F
+Player, Player F1, 590, 5, 3
+Player, Player F2, 310, 8, 3
+Player, Player F3, 180, 7, 1
+Player, Player F4, 360, 10, 2
+Player, Player F5, 210, 11, 1
+Player, Player F6, 340, 6, 3
+Player, Player F7, 320, 15, 4
+Player, Player F8, 230, 9, 2
+Player, Player F9, 300, 13, 1
+Player, Player F10, 250, 7, 3
+Player, Player F11, 410, 10, 1
+Player, Player F12, 420, 4, 2
+Player, Player F13, 380, 8, 1
+Player, Player F14, 270, 6, 2
+Player, Player F15, 350, 12, 3
+
+Team, Team G
+Player, Player G1, 620, 11, 6
+Player, Player G2, 250, 14, 2
+Player, Player G3, 190, 9, 3
+Player, Player G4, 320, 7, 1
+Player, Player G5, 410, 8, 2
+Player, Player G6, 280, 6, 1
+Player, Player G7, 350, 15, 3
+Player, Player G8, 330, 5, 2
+Player, Player G9, 370, 10, 1
+Player, Player G10, 240, 7, 3
+Player, Player G11, 300, 4, 1
+Player, Player G12, 290, 12, 2
+Player, Player G13, 310, 9, 3
+Player, Player G14, 340, 13, 1
+Player, Player G15, 260, 5, 2
+
+Team, Team H
+Player, Player H1, 410, 6, 2
+Player, Player H2, 230, 13, 2
+Player, Player H3, 175, 8, 1
+Player, Player H4, 300, 10, 3
+Player, Player H5, 250, 12, 1
+Player, Player H6, 400, 7, 2
+Player, Player H7, 220, 9, 1
+Player, Player H8, 270, 5, 2
+Player, Player H9, 310, 15, 3
+Player, Player H10, 180, 6, 1
+Player, Player H11, 320, 8, 2
+Player, Player H12, 290, 11, 3
+Player, Player H13, 340, 7, 2
+Player, Player H14, 300, 9, 1
+Player, Player H15, 280, 5, 3
+
+Team, Team I
+Player, Player I1, 460, 10, 4
+Player, Player I2, 330, 15, 3
+Player, Player I3, 140, 5, 1
+Player, Player I4, 270, 7, 2
+Player, Player I5, 390, 6, 3
+Player, Player I6, 310, 9, 1
+Player, Player I7, 210, 8, 2
+Player, Player I8, 280, 4, 1
+Player, Player I9, 320, 11, 3
+Player, Player I10, 250, 14, 2
+Player, Player I11, 300, 5, 1
+Player, Player I12, 400, 8, 3
+Player, Player I13, 360, 12, 2
+Player, Player I14, 230, 7, 1
+Player, Player I15, 310, 10, 4
+
+Team, Team J
+Player, Player J1, 550, 9, 3
+Player, Player J2, 270, 11, 2
+Player, Player J3, 160, 7, 1
+Player, Player J4, 300, 8, 2
+Player, Player J5, 410, 15, 3
+Player, Player J6, 180, 6, 1
+Player, Player J7, 330, 5, 2
+Player, Player J8, 320, 10, 3
+Player, Player J9, 240, 4, 1
+Player, Player J10, 340, 9, 2
+Player, Player J11, 210, 7, 3
+Player, Player J12, 390, 12, 1
+Player, Player J13, 280, 11, 2
+Player, Player J14, 300, 6, 3
+Player, Player J15, 250, 8, 1
+
+Team, Team K
+Player, Player K1, 600, 7, 3
+Player, Player K2, 300, 12, 2
+Player, Player K3, 220, 6, 1
+Player, Player K4, 340, 8, 2
+Player, Player K5, 180, 10, 1
+Player, Player K6, 290, 5, 3
+Player, Player K7, 310, 11, 2
+Player, Player K8, 270, 7, 1
+Player, Player K9, 230, 9, 3
+Player, Player K10, 320, 4, 1
+Player, Player K11, 310, 13, 2
+Player, Player K12, 280, 6, 1
+Player, Player K13, 300, 12, 3
+Player, Player K14, 400, 5, 2
+Player, Player K15, 290, 9, 1
